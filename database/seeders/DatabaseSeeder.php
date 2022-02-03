@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
             'category_id' => 1,
             'advertiser_id' => 2,
             'created_by_user_id' => 1,
-            'start_date' => '2022/2/5',
+            'start_date' => '2022/2/4',
         ]);
 
         $ad1->tags()->sync($tags);

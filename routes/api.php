@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AdController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\TagController;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,11 +19,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
 
 Route::group(['prefix'=>'v1'], function (){
+
+    Route::get('test', function (){
+        $advertisers = User::whereHas('roles', function ($query){
+            $query->where('name', 'Advertiser');
+        })->whereHas('ads', function ($q){
+            $q->where('start_date', date("Y-m-d", strtotime('tomorrow')));
+        })->get();
+        dd($advertisers);
+    });
+
     Route::post('/login', [AuthController::class, 'login']);
 
     Route::group(['middleware'=>'jwt.verify'], function (){

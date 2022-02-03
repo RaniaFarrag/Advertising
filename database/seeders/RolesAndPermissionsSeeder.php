@@ -40,9 +40,16 @@ class RolesAndPermissionsSeeder extends Seeder
         $admin->assignRole($admin_role);
 
         $advertiser = User::create([
-            'name' => 'Advertiser',
+            'name' => 'Advertiser1',
             'email' => 'advertiser@advertiser.com',
             'password' => Hash::make('advertiser@advertiser.com'),
+        ]);
+        $advertiser->assignRole($advertiser_role);
+
+        $advertiser = User::create([
+            'name' => 'Advertiser2',
+            'email' => 'advertiser2@advertiser2.com',
+            'password' => Hash::make('advertiser2@advertiser2.com'),
         ]);
         $advertiser->assignRole($advertiser_role);
 

@@ -53,4 +53,8 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function ads(){
+        return $this->hasMany(Ad::class, 'advertiser_id', 'id');
+    }
 }

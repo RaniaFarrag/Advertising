@@ -13,8 +13,12 @@ To Run The project <br>
 # Assumtions
 
 1 - This Module is one langauge <br>
-2 - There are two types of roles (Admin, Advertiser). So I used Saptie laravel permission package to handle this and for scalability in the future<br>
-3 - The Admin have all permissions, Advertiser can show its Ads and can filter them <br>
-4 - Each Ad has many related tags and each tag has many ads So the relation will be <b>ManyToMany</b><br>
-5 - I added created_by_user_id attribute in ads table to know who did add the ad if we have different users (ex: sales, HR, ...) can manage the ads in the future 
+2 - There are two types of roles (Admin, Advertiser).
+So I used <b>Saptie laravel permissions package</b> 
+to handle this and for scalability in the future<br>
+3 - I used <b>JWT Package</b> and perform login only<br>
+4 - The Admin have all permissions, Advertiser can show its Ads and can filter them <br>
+5 - Each Ad has many related tags and each tag has many ads So the relation will be <b>ManyToMany</b><br>
+6 - I added created_by_user_id attribute in ads table to know who did add the ad 
+if we have different users (ex: sales, HR, ...) can manage the ads in the future 
 
