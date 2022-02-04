@@ -23,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix'=>'v1'], function (){
 
     Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 
     Route::group(['middleware'=>'jwt.verify'], function (){
         // This Routes Need that user is Admin
@@ -33,15 +35,18 @@ Route::group(['prefix'=>'v1'], function (){
             // Manage Categories (view, create, edit, delete)
             Route::apiResource('categories', CategoryController::class);
 
-            // View All Ads
-            Route::get('ads', [AdController::class, 'index']);
-
             // Creat Ad
             Route::post('store/ads', [AdController::class, 'store']);
+
+            // Show Advertiser's Ads
+            Route::get('show/advertiser/ads', [AdController::class, 'showAdvertiserAds']);
         });
 
-        // Show Advertiser's Ads
-        Route::get('show/advertiser/ads', [AdController::class, 'showAdvertiserAds']);
+        // View All Ads
+        Route::get('ads', [AdController::class, 'index']);
+
+        // Show MY Ads
+        Route::get('show/my/ads', [AdController::class, 'showMyAds']);
 
         // Filter Ads By Category or Tag
         Route::post('filter/ads', [AdController::class, 'filterAds']);

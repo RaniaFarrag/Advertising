@@ -68,4 +68,11 @@ class AdController extends Controller
 
         return $this->success($ads->get(), 200);
     }
+
+    // Show Advertiser's Ads
+    public function showMyAds()
+    {
+        $advertiser_ads = Ad::where('advertiser_id', JWTAuth::user()->id)->get();
+        return $this->success($advertiser_ads, 200);
+    }
 }

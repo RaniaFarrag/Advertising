@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 
-class UnitTest extends TestCase
+class RoutesTest extends TestCase
 {
     /**
      * A basic unit test example.
@@ -13,12 +13,24 @@ class UnitTest extends TestCase
      */
 
     // Test Response of Login Request
-    public function test_auth()
+    public function test_login()
     {
         $this->json('post', 'api/v1/login')->assertStatus(200);
     }
 
-    // Test IF Admin Exist Or Not
+    // Test Response of Register Request
+    public function test_register()
+    {
+        $this->json('post', 'api/v1/register')->assertStatus(200);
+    }
+
+    // Test Response of Logout Request
+    public function test_logout()
+    {
+        $this->json('post', 'api/v1/logout')->assertStatus(200);
+    }
+
+    // Test IF Admin Exist In Database Or Not
     public function test_admin_exist()
     {
         $this->assertDatabaseHas('users', [
@@ -89,6 +101,11 @@ class UnitTest extends TestCase
     // Test Response of Filter Ads BY Categories or Tags Request
     public function test_filter_ads(){
         $this->json('post', 'api/v1/filter/ads')->assertStatus(200);
+    }
+
+    // Test Response of Show My Ads Request
+    public function test_show_my_ads(){
+        $this->json('get', 'api/v1/show/my/ads')->assertStatus(200);
     }
 
 
