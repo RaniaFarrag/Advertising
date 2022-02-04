@@ -22,18 +22,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix'=>'v1'], function (){
 
-    Route::get('test', function (){
-        $advertisers = User::whereHas('roles', function ($query){
-            $query->where('name', 'Advertiser');
-        })->whereHas('ads', function ($q){
-            $q->where('start_date', date("Y-m-d", strtotime('tomorrow')));
-        })->get();
-        dd($advertisers);
-    });
-
     Route::post('/login', [AuthController::class, 'login']);
 
     Route::group(['middleware'=>'jwt.verify'], function (){
+        // This Routes Need that user is Admin
         Route::group(['middleware'=>'isAdmin'], function (){
             // Manage Tag (view, create, edit, delete)
             Route::apiResource('tags', TagController::class);
@@ -46,7 +38,6 @@ Route::group(['prefix'=>'v1'], function (){
 
             // Creat Ad
             Route::post('store/ads', [AdController::class, 'store']);
-
         });
 
         // Show Advertiser's Ads
@@ -56,6 +47,5 @@ Route::group(['prefix'=>'v1'], function (){
         Route::post('filter/ads', [AdController::class, 'filterAds']);
 
     });
-
 
 });
