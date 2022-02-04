@@ -54,3 +54,11 @@ Add to Variables in collection
 1 - url 
 2 - token
 
+/********************************************************/
+
+Note : I used my personal emial on Mailtrap to receieve daily email 
+
+if you want to see and test it please contact me
+
+
+
