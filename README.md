@@ -23,7 +23,7 @@ to handle this and for scalability in the future<br>
 for scalability if we have different users not admin (ex: sales, HR, ...) can add the ads in the future 
 
 /********************************************************/
-#Admin Permissions
+# Admin Permissions
 1 - login <br>
 2 - logout <br>
 3 - MAnage Tags <br>
@@ -33,7 +33,7 @@ for scalability if we have different users not admin (ex: sales, HR, ...) can ad
 7 - Add ads <br>
 8 - show Advertiser's Ads <br>
 
-#Admvertiser Permissions
+# Admvertiser Permissions
 1 - Register <br>
 2 - login <br>
 3 - logout <br>
@@ -43,13 +43,13 @@ for scalability if we have different users not admin (ex: sales, HR, ...) can ad
 
 /********************************************************/
 
-#Unit Tests
+# Unit Tests
 
 - Added Unit Tests for Test The Response of Routes
 
 /********************************************************/
 
-#To Run Collection On Postman 
+# To Run Collection On Postman 
 Add to Variables in collection
 1 - url 
 2 - token
