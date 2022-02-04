@@ -56,7 +56,7 @@ Add to Variables in collection
 
 /********************************************************/
 
-Note : I used my personal emial on Mailtrap to receieve daily email 
+Note : I used my personal email on Mailtrap to receieve daily email 
 
 if you want to see and test it please contact me
 
