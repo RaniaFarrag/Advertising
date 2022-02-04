@@ -33,7 +33,7 @@ for scalability if we have different users not admin (ex: sales, HR, ...) can ad
 7 - Add ads <br>
 8 - show Advertiser's Ads <br>
 
-# Admvertiser Permissions
+# Advertiser Permissions
 1 - Register <br>
 2 - login <br>
 3 - logout <br>
