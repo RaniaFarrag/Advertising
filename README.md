@@ -22,3 +22,8 @@ to handle this and for scalability in the future<br>
 6 - I added created_by_user_id attribute in ads table to know who did add the ad 
 if we have different users (ex: sales, HR, ...) can manage the ads in the future 
 
+/********************************************************/
+#Unit Tests
+
+- Added Unit Tests for Test The Response of Routes
+
