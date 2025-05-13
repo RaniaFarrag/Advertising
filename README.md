@@ -12,7 +12,7 @@ To Run The project <br>
 /*******************************************************/
 # Assumtions
 
-1 - This Module is Apis for advertiser app <br>
+1 - This Module is a group of Apis for advertiser app <br>
 2 - There are two types of roles (Admin, Advertiser).
 So I used <b>Saptie laravel permissions package</b> 
 to handle this and for scalability in the future<br>
